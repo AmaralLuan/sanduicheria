@@ -23,4 +23,12 @@ const users = require('./routes/Users')
 routes.use('/users', users)
 
 
+
+/* ----- PRODUCT ROUTES ----- */
+
+const products = require('./routes/Products');
+
+routes.use('/products', products)
+
+
 module.exports = routes;
