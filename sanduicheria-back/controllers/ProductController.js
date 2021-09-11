@@ -36,6 +36,22 @@ const productController = {
       )
   },
 
+  getProduct: (req, res) => {
+    const id = req.params.id;
+
+    database.query(
+      'SELECT * FROM products WHERE id = ?',
+      id,
+      (err, result) => {
+        if (err) {
+          return console.log(err)
+        } else {
+          return res.send(result)
+        }
+      }
+    )
+  },
+
   deleteProduct: (req, res) => {
     const id = req.params.id;
 
